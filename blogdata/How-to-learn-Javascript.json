@@ -1,0 +1,5 @@
+{
+    "title":"How-to-learn-Javascript",
+    "content":"JavaScript is a versatile programming language primarily used for web development, enabling interactive and dynamic web content. It's a client-side scripting language executed in web browsers, allowing manipulation of HTML and CSS to create dynamic user experiences. JavaScript also supports server-side development through frameworks like Node.js. It features dynamic typing, functions as first-class citizens, and supports both procedural and object-oriented programming paradigms. JavaScript is essential for modern web applications, facilitating tasks like form validation, DOM manipulation, asynchronous programming, and AJAX requests. Its ecosystem boasts a vast array of libraries and frameworks, including React, Angular, and Vue.js, powering complex web solutions.",
+    "author":"Vivek Raj"
+}

@@ -1,95 +1,53 @@
-import Image from "next/image";
+'use client'
+import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
 import styles from "./page.module.css";
+import Image from 'next/image';
+import Link from 'next/link'
 
 export default function Home() {
+  const [blogs, setblogs] = useState([])
+
+  //Fetcing data
+  const fetchData = async () => {
+    let data = await fetch("http://localhost:3000/api/blogs")
+    let response = await data.json()
+    setblogs(response)
+    console.log("Fetching data")
+    console.log(blogs)
+  }
+
+  //Runs at every redering 
+  useEffect(() => {
+    fetchData()
+  });
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+      <Navbar />
+      <main className={styles.main}>
+        <h1 className={styles.mainheading}>Hunting Coders</h1>
+        <Image className={styles.image}
+          src="/home.jpg"
+          width={237}
+          height={158}
+          priority={true}
+          alt="Picture of the author"
         />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <p className={styles.description}>A blog for Hunting coder by a Hunting Coder</p>
+        <div className={styles.blogcontainer}>
+          <div className={styles.subcontainer}>
+            <h1>Popular Blogs</h1>
+            {
+              blogs.map((items) => {
+                return <div key={items.title} className={styles.blogitems}>
+                  <Link href={`/components/blog/${items.title}`}><h2>{(items.title).replaceAll('-', ' ')}</h2></Link>
+                  <p>{(items.content).substr(0, 38)}...</p>
+                </div>
+              })
+            }
+          </div>
+        </div>
+      </main>
+    </>
   );
 }

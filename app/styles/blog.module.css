@@ -1,0 +1,29 @@
+.blogcontainer {
+  font-size: 13px;
+  padding: 20px 23px;
+  box-shadow: 0 0 27px 20px #332ff8;
+  background-color: transparent;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.subcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: transparent;
+  width: 17rem;
+}
+
+.subcontainer h1 {
+  font-size: 30px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.blogitems {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

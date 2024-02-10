@@ -1,0 +1,5 @@
+{
+    "title": "How-to-learn-Next-JS",
+    "content": "Next.js is a powerful React framework designed for building server-side rendered (SSR) and statically generated (SSG) web applications. Developed by Vercel, it simplifies React application development by providing features like automatic code splitting, route pre-fetching, and built-in CSS and image optimization. Next.js supports server-side rendering for faster initial page loads and better SEO, while also allowing the generation of static sites for even greater performance. Its file-based routing system enhances project organization and simplifies navigation setup. Next.js also offers features like API routes for serverless functions, enabling seamless integration with backend services. With its strong developer experience and performance optimizations, Next.js is a top choice for building modern web applications.",
+    "author": "Vivek Raj"
+}
