@@ -33,7 +33,7 @@ const blog = () => {
               return <div key={itr.title} className={styles.blogitems}>
                 <Link href={`/components/blog/${itr.title}`}><h2>{(itr.title).replaceAll('-', ' ')}
                 </h2></Link>
-                <p>{(itr.content).substr(0, 140)}...</p>
+                <p>{(itr.metadesc).substr(0, 140)}...</p>
               </div>
             })
           }

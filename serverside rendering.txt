@@ -1,0 +1,14 @@
+Server Side Render New Version Important Notes
+
+-> From the version 13 or above server side rendering is not supported when one is using app router because from this version .. The App routing is that much of stable that doesn't need serverside rendering function
+
+-> However user can use the server side rendering function if they disable or not using App routers 
+
+-> Syntax and methadology of getServerSideProps methadology
+
+Syntax :- 
+export async function getServerSideProps() {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js')
+  const repo = await res.json()
+  return { props: { repo } }
+}

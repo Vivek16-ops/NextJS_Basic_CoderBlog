@@ -41,7 +41,7 @@ export default function Home() {
               blogs.map((items) => {
                 return <div key={items.title} className={styles.blogitems}>
                   <Link href={`/components/blog/${items.title}`}><h2>{(items.title).replaceAll('-', ' ')}</h2></Link>
-                  <p>{(items.content).substr(0, 38)}...</p>
+                  <p>{(items.metadesc).substr(0, 38)}...</p>
                 </div>
               })
             }

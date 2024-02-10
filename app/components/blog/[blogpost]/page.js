@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation'
 import Navbar from '../../Navbar';
 import styles from '../../../styles/blogpost.module.css'
-import { useState , useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 //Step 1:Fetching the data as per a slug
@@ -24,14 +24,18 @@ export default function blogpost() {
     useEffect(() => {
         //Runs on every render
         fetchData()
-      });
-      
+    });
+
+    function createMarkup(content) {
+        return { __html: content };
+    }
+
     return (
         <>
             <Navbar />
             <div className={styles.container}>
                 <h2>{(Filedetail.title).replaceAll('-', ' ')}</h2>
-                <p>{Filedetail.content}</p>
+                {<p dangerouslySetInnerHTML={createMarkup(Filedetail.content)}></p>}
                 <br />
                 <span>Author: {Filedetail.author}</span>
             </div>

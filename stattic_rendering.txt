@@ -1,0 +1,14 @@
+Static Rendering Concept 
+
+-> In the latest next js version unlike server side rendering static rendering is also not supported 
+
+-> But in static redering we use two methos getStaticProps and getStaticPath 
+
+-> But here is the syntax of static redering 
+
+Similar to server side redering
+export const getStaticProps = (async (context) => {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js')
+  const repo = await res.json()
+  return { props: { repo } }
+})
