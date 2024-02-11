@@ -33,25 +33,25 @@ const contact = () => {
       <Navbar />
       <div className={styles.container}>
         <h2>Contact US</h2>
-        <form onSubmit={handleSubmit}>
+        <form className={styles.formset} onSubmit={handleSubmit}>
           <div className={styles.mb3}>
             <label htmlFor="name" className={styles.formlabel}>Name: </label>
-            <input type="text" name='name' value={credentials.name} onChange={handleChange} className="form-control" id="name" aria-describedby="namehelp" />
+            <input type="text" name='name' value={credentials.name} onChange={handleChange} id="name" />
           </div>
           <div className={styles.mb3}>
             <label htmlFor="email" className={styles.formlabel}>Email: </label>
-            <input type="email" name='email' value={credentials.email} onChange={handleChange} className="form-control" id="email" aria-describedby="emailhelp" />
-            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+            <input type="email" name='email' value={credentials.email} onChange={handleChange} id="email" />
+            <div id="emailHelp">We'll never share your email with anyone else.</div>
           </div>
           <div className={styles.mb3}>
             <label htmlFor="phone" className={styles.formlabel}>Phone: </label>
-            <input type="phone" onChange={handleChange} name="phone" value={credentials.phone} className="form-control" id="phone" />
+            <input type="phone" onChange={handleChange} name="phone" value={credentials.phone} id="phone" />
           </div>
           <div className={styles.mb3}>
-            <textarea className="form-control" id="concerns" name='concern' value={credentials.concern} onChange={handleChange} rows={5}></textarea>
+            <textarea id="concerns" name='concern' value={credentials.concern} onChange={handleChange} rows={5}></textarea>
             <label className={styles.formlabel} htmlFor="concerns">Write your concerns here</label>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </>

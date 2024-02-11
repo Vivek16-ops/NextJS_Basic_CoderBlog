@@ -34,6 +34,7 @@ const blog = () => {
                 <Link href={`/components/blog/${itr.title}`}><h2>{(itr.title).replaceAll('-', ' ')}
                 </h2></Link>
                 <p>{(itr.metadesc).substr(0, 140)}...</p>
+                <button className={styles.btn}>Read More</button>
               </div>
             })
           }

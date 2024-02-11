@@ -22,3 +22,7 @@
     transform: scale(0.7);
     color: aqua;
 }
+
+.active{
+    color: aqua;
+}

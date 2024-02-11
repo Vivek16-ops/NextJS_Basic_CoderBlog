@@ -17,3 +17,10 @@
 .container p{
     padding: 0px 2rem;
 }
+
+/* Responsive design  */
+@media screen and (max-width: 595px) {
+    .container h2{
+        font-size: 26px;
+    }
+}

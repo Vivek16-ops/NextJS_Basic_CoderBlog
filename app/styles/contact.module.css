@@ -15,3 +15,11 @@
 .formlabel{
     padding: 0px 10px;
 }
+
+.formset{
+    padding: 11px 22px;
+}
+
+/* Responsive design  */
+@media screen and (max-width: 595px) {
+}

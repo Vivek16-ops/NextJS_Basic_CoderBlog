@@ -1,15 +1,26 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 0 27px 20px #332ff8;
 }
 
-.subcontainer{
+.subcontainer {
+    margin: 12px 2px;
     width: 62vw;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.subcontainer ul{
+
+.subcontainer ul {
     padding: 2px 33px;
+}
+
+/* Responsive design  */
+@media screen and (max-width: 595px) {
+    .subcontainer {
+        margin: 12px;
+        width: 76vw;
+    }
 }
